@@ -17,7 +17,7 @@ const Modal = ({ setModal, name, symbol, txhash }) => {
     <>
       <div
         onClick={() => setModal(false)}
-        className="w-screen h-screen text-black modal-glassmorphism rounded-none flex items-center justify-center z-10 top-0 left-0 right-0 bottom-0 absolute font-epilogue"
+        className="w-screen h-screen text-black modal-glassmorphism rounded-none flex items-center justify-center z-10 top-0 left-0 right-0 fixed bottom-0 font-epilogue"
       >
         <div
           onClick={(e) => {

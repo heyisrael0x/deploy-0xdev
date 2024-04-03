@@ -77,7 +77,7 @@ export const CustomButton = () => {
                           <img
                             alt={chain.name ?? "Chain icon"}
                             src={chain.iconUrl}
-                            className="w-[30px] h-[30px] xl:w-9 xl:h-9 rounded-xl"
+                            className="w-[20px] h-[20px] rounded-xl"
                           />
                         )}
                       </div>

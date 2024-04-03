@@ -31,24 +31,17 @@ const FormField = ({ setModal, setMetadata, metadata }) => {
   const { chain } = useNetwork();
   const tokenfiaddress =
     chain?.id in contractAddress ? contractAddress[chain?.id][0] : null;
-  const { data, isLoading, isSuccess, error, write } = useContractWrite({
-    address: tokenfiaddress,
-    abi: abi,
-    functionName: "deployERC20Token",
-  });
+  const { data, isLoading, isSuccess, error, write, writeAsync } =
+    useContractWrite({
+      address: tokenfiaddress,
+      abi: abi,
+      functionName: "deployERC20Token",
+    });
+
   console.log(isLoading);
   console.log("sucesss", isSuccess);
 
   const { open } = useWeb3Modal();
-  const test = () => {
-    console.log("HIII");
-    setMetadata({
-      name: createTokenForm.name,
-      symbol: createTokenForm.symbol,
-      txhash: "0x55d15bb6e7286BA48dC4F4a27Df492ABe47c6eE2",
-    });
-    setModal(true);
-  };
   useEffect(() => {}, []);
   const [createTokenForm, setCreateTokenForm] = useState({
     name: "",
@@ -66,17 +59,17 @@ const FormField = ({ setModal, setMetadata, metadata }) => {
     const name = createTokenForm.name;
     const symbol = createTokenForm.symbol;
     const supply = createTokenForm.supply;
-    write({ args: [name, symbol, supply] }).then(() => {
-      if (isSuccess) {
-        test();
-        createTokenForm.name = "";
-        createTokenForm.symbol = "";
-        createTokenForm.supply = "";
-      }
+    const responds = await writeAsync({ args: [name, symbol, supply] });
+    setMetadata({
+      name: createTokenForm.name,
+      symbol: createTokenForm.symbol,
+      txhash: responds.hash,
     });
+    setModal(true);
+    createTokenForm.name = "";
+    createTokenForm.symbol = "";
+    createTokenForm.supply = "";
   };
-
-  console.log("data", data);
   return (
     <form
       onSubmit={handleFormSubmit}
@@ -108,7 +101,7 @@ const FormField = ({ setModal, setMetadata, metadata }) => {
         {address == null ? (
           <button
             type="button"
-            className={`rounded-xl sm:p-5 p-4 active:scale-95 transition-all duration-300 text-white bg-[#0052FF] color sm:px-12`}
+            className={`bg-[#28282B] text-white p-[0.8rem] px-4 border-[0.5px] rounded-xl border-[#424242] flex items-center gap-[0.62rem] active:scale-95 transition-all duration-30`}
             onClick={() => open()}
           >
             Connect
@@ -116,7 +109,7 @@ const FormField = ({ setModal, setMetadata, metadata }) => {
         ) : (
           <button
             type="submit"
-            className={`bg-[#28282B] text-white p-[1rem] px-4 border-[0.5px] rounded-xl border-[#424242] flex items-center gap-[0.62rem] active:scale-95 transition-all duration-30`}
+            className={`bg-[#28282B] text-white p-[0.8rem] px-4 border-[0.5px] rounded-xl border-[#424242] flex items-center gap-[0.62rem] active:scale-95 transition-all duration-30`}
           >
             {isLoading ? (
               <div className="flex gap-2">
