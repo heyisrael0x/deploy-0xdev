@@ -84,7 +84,7 @@ const TokenDetails = () => {
                           <p>Address:&nbsp;</p>
                           <b className="font-semibold hover:underline">
                             <a
-                              href={`${chain.blockExplorers.default.url}address/${token.tokenAddress}`}
+                              href={`${chain.blockExplorers.default.url}/address/${token.tokenAddress}`}
                               target="_blank"
                               rel="noopener noreferrer"
                             >
