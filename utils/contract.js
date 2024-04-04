@@ -1,5 +1,5 @@
 export const contractAddress = {
-  84532: ["0x88EA0AE5D6ee52415b24d89b756FD90c8910F14c"],
+  8453: ["0x6b5bf25df67c9aeb7186c1c4b6e3707c8a7c1991"],
 };
 
 export const abi = [

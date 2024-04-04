@@ -44,7 +44,7 @@ const BaseSepolia = {
 };
 
 const { chains, publicClient } = configureChains(
-  [base, BaseSepolia],
+  [base],
   [publicProvider()]
 );
 
@@ -64,7 +64,7 @@ createWeb3Modal({
   wagmiConfig,
   projectId,
   chains,
-  defaultChain: BaseSepolia,
+  defaultChain: base,
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
