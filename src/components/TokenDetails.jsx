@@ -34,7 +34,7 @@ const TokenDetails = () => {
   });
 
   const updateDetails = async () => {
-    if (!address || chain.unsupported || chain.id != "84532") {
+    if (!address || chain.unsupported || chain.id != "8453") {
       setUserToken([]);
       setDeployedToken(0);
     } else {
@@ -42,10 +42,11 @@ const TokenDetails = () => {
       setDeployedToken(data[1].result);
     }
   };
+  setInterval(() => {
+    updateDetails();
+  }, 2000);
   useEffect(() => {
-    setInterval(() => {
-      updateDetails();
-    }, 2000);
+    updateDetails();
   }, [address, chain]);
 
   return (
