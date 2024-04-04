@@ -43,7 +43,7 @@ const Modal = ({ setModal, name, symbol, txhash }) => {
               <b>Tx hash: </b>
               {"  "}
               <a
-                href={`${chain.blockExplorers.default.url}tx/${txhash}`}
+                href={`${chain.blockExplorers.default.url}/tx/${txhash}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex flex-row underline hover:text-black cursor-pointer"
@@ -62,7 +62,7 @@ const Modal = ({ setModal, name, symbol, txhash }) => {
             </span>
           </div>
           <a
-            href={`${chain.blockExplorers.default.url}tx/${txhash}`}
+            href={`${chain.blockExplorers.default.url}/tx/${txhash}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex bg-[#0052FF] justify-center items-center p-3 px-4 mr-2 rounded-lg cursor-pointer"
