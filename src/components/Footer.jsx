@@ -34,7 +34,7 @@ const Footer = () => {
           <a href="https://x.com/Base0xDeveloper">
             <Twitter />
           </a>
-          <a href="">
+          <a href="https://dexscreener.com/base/0x37d49bf9cfcdcdc4f867fb809475ad4dd4a10c98">
             <Dexscreener />
           </a>
         </div>
