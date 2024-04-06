@@ -59,7 +59,7 @@ const FormField = ({ setModal, setMetadata, metadata }) => {
     const name = createTokenForm.name;
     const symbol = createTokenForm.symbol;
     const supply = createTokenForm.supply;
-    const responds = await writeAsync({ args: [name, symbol, supply] });
+    const responds = await writeAsync({ args: [name, symbol, supply] })
     setMetadata({
       name: createTokenForm.name,
       symbol: createTokenForm.symbol,

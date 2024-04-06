@@ -13,6 +13,7 @@
     "@rainbow-me/rainbowkit": "^1.1.3",
     "@web3modal/wagmi": "^3.0.2",
     "ethers": "^6.7.1",
+    "moralis": "^2.25.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",

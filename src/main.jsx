@@ -44,7 +44,7 @@ const BaseSepolia = {
 };
 
 const { chains, publicClient } = configureChains(
-  [base],
+  [base, BaseSepolia],
   [publicProvider()]
 );
 

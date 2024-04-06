@@ -1,5 +1,6 @@
 import Home from "./pages/Home";
 import Create from "./pages/Create";
+import Airdropper from "./pages/Airdropper";
 
 import {
   Route,
@@ -11,7 +12,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<Create />} />
-      <Route path="/create" element={<Home />} />
+      <Route path="/airdropper" element={<Airdropper />} />
     </>
   )
 );
